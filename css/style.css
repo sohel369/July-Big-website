@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #2e8cf8;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+nav .logo h2 {
+  color: #fff;
+  font-size: 24px;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+nav ul li {
+  margin-right: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #ccc;
+}
+nav .btn_group {
+  display: flex;
+  align-items: center;
+}
+nav .btn_group button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav .btn_group button.btn1 {
+  background-color: #b2de27;
+}
+nav .btn_group button.btn1:hover {
+  background-color: #16a085;
+  color: #fff;
+}
+nav .btn_group button.btn2 {
+  background-color: transparent;
+  border: 2px solid #b2de27;
+  color: #666;
+}
+nav .btn_group button.btn2:hover {
+  background-color: #b2de27;
+  color: #000;
+}
+
+.main_body {
+  height: 100vh;
+  background-color: #16a085;
+}
+
+.about {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  text-align: center;
+}
+.about h1 {
+  font-size: 60px;
+  color: #2e8cf8;
+}
+.about .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.about .container img {
+  width: 40%;
+  max-width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.about .container .content {
+  width: 50%;
+  max-width: 600px;
+  text-align: left;
+}
+.about .container .content h1 {
+  font-size: 36px;
+  color: #16a085;
+  margin-bottom: 20px;
+}
+.about .container .content h2 {
+  font-size: 28px;
+  color: #19903c;
+}
+.about .container .content h3 {
+  font-size: 24px;
+  color: #970505;
+}
+.about .container .content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#gallery {
+  background-color: #fff;
+  padding: 0 4%;
+}
+#gallery h1 {
+  font-size: 48px;
+  color: #970505;
+  margin-bottom: 30px;
+  text-align: center;
+}
+#gallery .container {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+}
+#gallery .container .img_content {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  height: 294px;
+  width: 294px;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#gallery .container .img_content:hover {
+  box-shadow: 10px 10px 40px #000;
+}
+#gallery .container .img_content img {
+  padding: 6px;
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#gallery .container .img_content .download {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#gallery .container .img_content .download h4 {
+  font-size: 18px;
+  color: #333;
+}
+#gallery .container .img_content .download button.download-btn {
+  background-color: #16a085;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#gallery .container .img_content .download button.download-btn:hover {
+  background-color: #1abc9c;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  nav .logo h2 {
+    margin-bottom: 10px;
+  }
+  nav ul {
+    margin-top: 10px;
+  }
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  nav .btn_group {
+    margin-top: 10px;
+  }
+  .about h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .about .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about .container img {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  .about .container .content {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #gallery .img_content {
+    width: 90%;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=style.css.map */

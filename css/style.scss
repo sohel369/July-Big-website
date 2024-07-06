@@ -1,0 +1,282 @@
+// Variables
+$primary-color: #2e8cf8;
+$secondary-color: #16a085;
+$accent-color: #b2de27;
+$border-color: #ccc;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$text-color: #333;
+$link-color: #fff;
+$link-hover-color: #ccc;
+
+// Reset and general styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+// Navigation styles
+nav {
+  background-color: $primary-color;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  .logo {
+    h2 {
+      color: $link-color;
+      font-size: 24px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+
+  .btn_group {
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.btn1 {
+        background-color: $accent-color;
+
+        &:hover {
+          background-color: $secondary-color;
+          color: #fff;
+        }
+      }
+
+      &.btn2 {
+        background-color: transparent;
+        border: 2px solid $accent-color;
+        color: #666;
+
+        &:hover {
+          background-color: $accent-color;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+// Main body section styles (optional)
+.main_body {
+  height: 100vh;
+  background-color: $secondary-color;
+}
+
+// About section styles
+.about {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  text-align: center;
+
+  h1 {
+    font-size: 60px;
+    color: #2e8cf8;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    img {
+      width: 40%;
+      max-width: 400px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px $shadow-color;
+    }
+
+    .content {
+      width: 50%;
+      max-width: 600px;
+      text-align: left;
+
+      h1 {
+        font-size: 36px;
+        color: $secondary-color;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+        color: #19903c;
+      }
+
+      h3 {
+        font-size: 24px;
+        color: #970505;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// Gallery section styles
+#gallery {
+  background-color: #fff;
+  padding: 0 4%;
+
+  h1 {
+    font-size: 48px;
+    color: #970505;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+
+    .img_content {
+      border: 1px solid $border-color;
+      border-radius: 10px;
+      box-shadow: 0 0 20px $shadow-color;
+      height: 294px;
+      width: 294px;
+      transition: .5s;
+      cursor: pointer;
+      border-radius: 10px;
+
+      &:hover {
+        box-shadow: 10px 10px 40px #000;
+      }
+
+      img {
+        padding: 6px;
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .download {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h4 {
+          font-size: 18px;
+          color: $text-color;
+        }
+
+        button.download-btn {
+          background-color: $secondary-color;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          outline: none;
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background-color: #1abc9c;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+
+    .logo {
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      margin-top: 10px;
+
+      li {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    .btn_group {
+      margin-top: 10px;
+    }
+  }
+
+  .about {
+    h1 {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        width: 80%;
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+
+      .content {
+        width: 80%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+
+  }
+
+  #gallery {
+    .img_content {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

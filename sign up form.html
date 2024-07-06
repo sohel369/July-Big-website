@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            background: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            height: auto;
+            width: 400px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            padding: 0 40px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .form_group {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px; /* Increased padding for better readability and touch targets */
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            transition: border-color 0.3s ease; /* Smooth transition for focus */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for depth */
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:focus {
+            border: 1px solid #007bff; /* Enhanced focus state */
+        }
+
+        .toggle_password {
+            position: absolute;
+            right: 10px;
+            top: 62%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .btn1 {
+            width: 100%;
+            padding: 12px 20px; /* Increased padding for better touch targets */
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: #cf000f;
+            color: white;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for depth */
+        }
+
+        .btn1:hover {
+            background: green;
+        }
+
+        .btn_icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for depth */
+        }
+
+        .btn_icon:hover {
+            background: #0056b3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                height: auto;
+                margin: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn_icon" onclick="window.history.back()"><i class="fa-solid fa-arrow-left"></i></button>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signupForm" action="#" method="get">
+            <div class="form_group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter Your First Name" required>
+            </div>
+            <div class="form_group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter Your Last Name" required>
+            </div>
+            <div class="form_group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form_group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Your Password" required>
+                <span class="toggle_password" onclick="togglePasswordVisibility('password')"><i class="fa-solid fa-eye"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm Your Password" required>
+                <span class="toggle_password" onclick="togglePasswordVisibility('confirmPassword')"><i class="fa-solid fa-eye"></i></span>
+            </div>
+            <button type="submit" class="btn1">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(fieldId) {
+            const field = document.getElementById(fieldId);
+            const icon = field.nextElementSibling.firstChild;
+            if (field.type === "password") {
+                field.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                field.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the values of the form fields
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Email validation regex
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            // If validation passes, submit the form
+            alert('Form submitted successfully!');
+            this.submit();
+        });
+    </script>
+</body>
+
+</html>
