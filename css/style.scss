@@ -21,12 +21,14 @@ body {
 
 // Navigation styles
 nav {
-  background-color: $primary-color;
+  background-color: #2e8cf8ba;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  position: fixed;
+  width: 100%;
 
   .logo {
     h2 {
@@ -72,7 +74,7 @@ nav {
         background-color: $accent-color;
 
         &:hover {
-          background-color: $secondary-color;
+          background-color: #19903c;
           color: #fff;
         }
       }
@@ -80,10 +82,10 @@ nav {
       &.btn2 {
         background-color: transparent;
         border: 2px solid $accent-color;
-        color: #666;
+        color: #fff;
 
         &:hover {
-          background-color: $accent-color;
+          background-color: #25aa4d;
           color: #000;
         }
       }
@@ -94,14 +96,67 @@ nav {
 // Main body section styles (optional)
 .main_body {
   height: 100vh;
-  background-color: $secondary-color;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(140deg, #970505, #16a085);
+
+  .content {
+    width: 70%;
+    margin-left: 40px;
+
+    h1 {
+      font-size: 60px;
+      background: linear-gradient(150deg, #16a085, #d32401, #970505);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: 35px;
+      font-weight: bold;
+      color: #16a085;
+    }
+
+    a {
+      text-decoration: none;
+      list-style: none;
+
+      .btn_so {
+        padding: 10px 30px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 40px;
+        color: #85bb95;
+        font-weight: 600;
+        background: #970505;
+      }
+    }
+  }
+
+  .content_img {
+    width: 30%;
+    height: 400px;
+    margin-right: 100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+  }
 }
 
 // About section styles
 .about {
   background-color: #f2f2f2;
-  padding: 50px 0;
+  // padding: 50px 0;
   text-align: center;
+  width: 100%;
+  height: 120vh;
+  padding-top: 100px;
 
   h1 {
     font-size: 60px;
@@ -153,7 +208,8 @@ nav {
 // Gallery section styles
 #gallery {
   background-color: #fff;
-  padding: 0 4%;
+  padding: 60px 4%;
+  
 
   h1 {
     font-size: 48px;
@@ -225,6 +281,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
+    display: none;
 
     .logo {
       h2 {
@@ -246,7 +303,10 @@ nav {
     }
   }
 
-  .about {
+  #about {
+    height: 180vh;
+    width: 100%;
+
     h1 {
       font-size: 40px;
       text-align: center;
@@ -277,6 +337,43 @@ nav {
     .img_content {
       width: 90%;
       margin: 0 auto;
+    }
+  }
+
+  .main_body {
+    flex-direction: column;
+    height: 150vh;
+    text-align: center;
+
+    .content {
+      width: 100%;
+      margin-left: 0;
+
+      h1 {
+        font-size: 30px;
+
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .btn_so {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .content_img {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
