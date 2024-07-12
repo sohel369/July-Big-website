@@ -32,3 +32,26 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.removeChild(a);
     }
 });
+document.getElementById("role").addEventListener("click", function () {
+    if (this.innerHTML === "Developer") {
+        this.innerHTML = "Designer";
+    } else {
+        this.innerHTML = "Developer"
+    }
+});
+document.querySelector('.notification').addEventListener('click', function () {
+    var badge = this.querySelector('.badge');
+    if (badge) {
+        badge.style.display = 'none';
+    }
+});
+document.getElementById("youtube").addEventListener("click", function () {
+    let openYoutube = prompt("Password:", "sohel");
+    if (openYoutube && openYoutube.toLocaleLowerCase() === "sohel") {
+        window.open("https://www.youtube.com/", "New Youtube", "height=800,width=800");
+    } else if (openYoutube && openYoutube.toLocaleLowerCase() !== "sohel") {
+        alert("Password is incorrect.");
+    } else {
+        confirm("Are you sure to log out") ? document.write("Log out!") :this.accessKey;
+    }
+});
